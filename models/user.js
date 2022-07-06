@@ -18,8 +18,7 @@ const userSchema = new mongoose.Schema({
   },
 
   otp: {
-    type: Number,
-    min:4,
+    type: String,
     required: true
   },
 });
