@@ -1,9 +1,11 @@
-const Controller = require("../controllers/authC.js")
 const router = require('express').Router();
 const nodemailer = require('nodemailer');
 
-router.post('/', Controller.signUpUser);
-router.post('/verify', Controller.verifyEmail);
+const Controller = require("../controllers/authC.js")
+const errorHandler = require('../middleware/error_handler.js');
+
+router.post('/signup',errorHandler(Controller.signUpUser));
+router.post('/verify',errorHandler( Controller.verifyEmail));
 
 
 const MAIL_SETTINGS = {
