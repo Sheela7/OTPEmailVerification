@@ -79,6 +79,7 @@ const createUser = async (userEmail,userPassword,userName) => {
     });
     await emailService.sendOtpMail(userEmail, userOtp);
    return userData; 
+//    console.log()
 }
 
 module.exports.verifyEmail = (req, res) => {
